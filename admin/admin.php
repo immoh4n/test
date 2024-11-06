@@ -12,7 +12,6 @@ if(isset($_POST['update-section']))
     $query = "UPDATE section_control SET ";
     $query.="home_section='$home',";
     $query.="about_section='$about',";
-    $query.="resume_section='$resume',";
     $query.="services_section='$services',";
     $query.="portfolio_section='$portfolio',";
     $query.="contact_section='$contact' WHERE id=1";

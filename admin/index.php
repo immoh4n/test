@@ -192,6 +192,16 @@ $user_data = mysqli_fetch_array($run);
               </a>
             </li>
 
+            <li class="nav-item menu-open">
+              <a href="index.php?Messages=true" class="nav-link">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+
+                <p>
+                    MESSAGES
+                </p>
+              </a>
+            </li>
+
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -1205,7 +1215,59 @@ if (isset($_POST['add-project'])) {
 
 
     <?php
-}else{
+}
+
+elseif (isset($_GET['Messages'])) {
+    ?>
+    <div class="card card-primary col-lg-12">
+        <div class="card-header">
+            <h3 class="card-title">Inbox</h3>
+        </div>
+        <!-- /.card-header -->
+        
+        <div class="card-body p-0">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width: 10px">#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Number</th>
+                        <th>Message</th>
+                        <th style="width: 40px">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    // Query to retrieve messages from contact_form
+                    $query = "SELECT * FROM contact_form ORDER BY id DESC";
+                    $result = mysqli_query($db, $query);
+                    $c = 1;
+                    
+                    while ($message = mysqli_fetch_assoc($result)) {
+                    ?>
+                        <tr>
+                            <td><?= $c ?></td>
+                            <td><?= htmlspecialchars($message['name']) ?></td>
+                            <td><?= htmlspecialchars($message['email']) ?></td>
+                            <td><?= htmlspecialchars($message['subject']) ?></td>
+                            <td><?= htmlspecialchars($message['message']) ?></td>
+                            <td>
+                                <a href="delete_message.php?id=<?= $message['id'] ?>" onclick="return confirm('Are you sure you want to delete this message?');">Delete</a>
+                            </td>
+                        </tr>
+                    <?php
+                        $c++;
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <?php
+}
+else{
   ?>
 
             <form method="post" action="../admin/admin.php">
