@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2024 at 08:56 AM
+-- Generation Time: Nov 06, 2024 at 07:54 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -79,9 +79,9 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`) VALUES
-(1, 'Maternity Sessions'),
-(2, 'Portrait Sessions'),
-(3, 'Family Sessions');
+(1, 'Wedding'),
+(2, 'Portraits'),
+(3, 'Regular');
 
 -- --------------------------------------------------------
 
@@ -102,7 +102,11 @@ CREATE TABLE `contact_form` (
 --
 
 INSERT INTO `contact_form` (`id`, `name`, `email`, `subject`, `message`) VALUES
-(141, 'Abhisheksingh8103@gmail.com', 'rs5163665@gmail.com', 'dsndbns', 'dsdsdsd');
+(149, 'BALAJI R', '2116064@saec.ac.in', '0', 'dbvjkvjkd'),
+(150, 'Mohan', 'mohan960035@gmail.com', '2147483647', 'Hiiii'),
+(151, 'Mohan Kumar', 'mohan960035@gmail.com', '2147483647', 'Hiiii'),
+(152, 'Mohan Kumar', 'mohan960035@gmail.com', '96000359068', 'Hiiii'),
+(153, 'Mohan', 'mohan960035@gmail.com', '96000359068', 'hi');
 
 -- --------------------------------------------------------
 
@@ -143,8 +147,8 @@ CREATE TABLE `counter` (
 --
 
 INSERT INTO `counter` (`id`, `counter_icon`, `pre`, `post`, `counter_title`) VALUES
-(11, 'bi bi-folder', 0, 20, 'PROJECTS'),
-(13, 'bi bi-briefcase', 0, 4, 'WORK EXPERIENCE');
+(11, 'bi bi-folder', 0, 50, 'PROJECTS'),
+(13, 'bi bi-briefcase', 0, 6, 'YEARS OF EXPERIENCE');
 
 -- --------------------------------------------------------
 
@@ -341,7 +345,11 @@ CREATE TABLE `skills` (
 --
 
 INSERT INTO `skills` (`id`, `skill_name`, `skill_level`) VALUES
-(22, 'Hello', 51);
+(23, 'Photography Technique', 95),
+(24, 'Lighting & Composition', 85),
+(25, 'Photo Editing (Adobe Photoshop, Lightroom)', 100),
+(26, 'Time Management & Punctuality', 100),
+(27, 'Event Management', 74);
 
 -- --------------------------------------------------------
 
@@ -514,7 +522,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `contact_form`
 --
 ALTER TABLE `contact_form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
 
 --
 -- AUTO_INCREMENT for table `contact_info`
@@ -580,7 +588,7 @@ ALTER TABLE `site_background`
 -- AUTO_INCREMENT for table `skills`
 --
 ALTER TABLE `skills`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `social_media`
